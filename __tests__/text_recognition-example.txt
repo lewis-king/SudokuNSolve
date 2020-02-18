@@ -1,0 +1,86 @@
+[{"bounding": {"height": 70, "left": 576, "top": 301, "width": 96}, "text": "44"}, {"bounding": {"height": 130, "left": 1059, "top": 836, "width": 88}, "text": "2"}, {"bounding": {"height": 379, "left": 1875, "top": 1039, "width": 561}, "text": "2 9 4
+1"}, {"bounding": {"height": 395, "left": 1448, "top": 1259, "width": 372}, "text": "7
+5 7"}, {"bounding": {"height": 124, "left": 2370, "top": 1297, "width": 73}, "text": "6"}, {"bounding": {"height": 351, "left": 777, "top": 1504, "width": 386}, "text": "8 9
+4"}, {"bounding": {"height": 361, "left": 1881, "top": 1729, "width": 394}, "text": "7
+5 8"}, {"bounding": {"height": 172, "left": 1232, "top": 1925, "width": 379}, "text": "2 9"}, {"bounding": {"height": 426, "left": 528, "top": 2138, "width": 645}, "text": "1 9
+5 7 3"}, {"bounding": {"height": 128, "left": 1519, "top": 2171, "width": 87}, "text": "8"}, {"bounding": {"height": 125, "left": 1960, "top": 2597, "width": 90}, "text": "4"}, {"bounding": {"height": 66, "left": 597, "top": 3455, "width": 85}, "text": "40"}]
+
+
+
+
+[
+{"bounding": {"height": 70, "left": 576, "top": 301, "width": 96}, "text": "44"}, 
+{"bounding": {"height": 130, "left": 1059, "top": 836, "width": 88}, "text": "2"}, 
+{"bounding": {"height": 379, "left": 1875, "top": 1039, "width": 561}, "text": "2 9 4
+1"}, 
+{"bounding": {"height": 395, "left": 1448, "top": 1259, "width": 372}, "text": "7
+5 7"}, 
+{"bounding": {"height": 124, "left": 2370, "top": 1297, "width": 73}, "text": "6"}, 
+{"bounding": {"height": 351, "left": 777, "top": 1504, "width": 386}, "text": "8 9
+4"}, 
+{"bounding": {"height": 361, "left": 1881, "top": 1729, "width": 394}, "text": "7
+5 8"}, 
+{"bounding": {"height": 172, "left": 1232, "top": 1925, "width": 379}, "text": "2 9"}, 
+{"bounding": {"height": 426, "left": 528, "top": 2138, "width": 645}, "text": "1 9
+5 7 3"}, 
+{"bounding": {"height": 128, "left": 1519, "top": 2171, "width": 87}, "text": "8"}, 
+{"bounding": {"height": 125, "left": 1960, "top": 2597, "width": 90}, "text": "4"}, 
+{"bounding": {"height": 66, "left": 597, "top": 3455, "width": 85}, "text": "40"}
+]
+
+[
+      [null, null, 2, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 2, 9, 4],
+      [null, null, null, null, 7, null, null, 1, 6],
+      [null, 8, 9, null, 5, 7, null, null, 1],
+      [null, 4, null, null, null, null, null, 7, null],
+      [7, null, null, 2, 9, null, 5, 8, null],
+      [1, 9, null, null, 8, null, null, null, null],
+      [5, 7, 3, null, null, null, null, null, null],
+      [null, null, null, null, null, null, 4, null, null],
+]
+
+
+
+
+[{"bounding": {"height": 17, "left": 177, "top": 14, "width": 13}, "text": "9"}, 
+{"bounding": {"height": 46, "left": 233, "top": 19, "width": 21}, "text": "4
+6"}, {"bounding": {"height": 49, "left": 19, "top": 43, "width": 12}, "text": "5
+2"}, {"bounding": {"height": 27, "left": 136, "top": 68, "width": 86}, "text": "7 3 5"}, 
+{"bounding": {"height": 50, "left": 80, "top": 74, "width": 14}, "text": "8
+4"}, {"bounding": {"height": 19, "left": 145, "top": 106, "width": 13}, "text": "9"}, 
+{"bounding": {"height": 28, "left": 233, "top": 136, "width": 46}, "text": "5 2"}, 
+{"bounding": {"height": 24, "left": 6, "top": 133, "width": 55}, "text": "7 8"}, 
+{"bounding": {"height": 52, "left": 200, "top": 169, "width": 23}, "text": "8
+3"}, {"bounding": {"height": 52, "left": 144, "top": 169, "width": 13}, "text": "1
+6"}, {"bounding": {"height": 93, "left": 34, "top": 196, "width": 55}, "text": "2
+5
+7"}, {"bounding": {"height": 50, "left": 272, "top": 204, "width": 12}, "text": "9
+7"}, {"bounding": {"height": 19, "left": 113, "top": 202, "width": 12}, "text": "5"}, 
+{"bounding": {"height": 19, "left": 111, "top": 268, "width": 13}, "text": "4"}]
+
+[
+      [null, null, null, null, null, 9, null, 4, null],
+      [5, null, null, null, null, null, null, 6, null],
+      [2, null, 8, null, 7, 3, 5, null, null],
+      [null, null, 4, null, 9, null, null, null, null],
+      [7, 8, null, null, null, null, null, 5, 2],
+      [null, null, null, null, 1, null, 8, null, null],
+      [null, null, 2, 5, 6, null, 3, null, 9],
+      [null, 5, null, null, null, null, null, null, 7],
+      [null, 7, null, 4, null, null, null, null, null],
+]
+
+"4\n6"
+"9"
+"5\n2"
+"7 3 5"
+"8\n4"
+"9"
+"7 8"
+"5 2"
+"1\n2 5 6"
+"8\n3"
+"9"
+"5\n7"
+
