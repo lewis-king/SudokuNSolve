@@ -10,7 +10,7 @@ import {
 import {
   solve,
   determineStartingNumbersCoordinates,
-} from '../sudoku/SudokuSolver';
+} from '../../services/SudokuSolver';
 import SortableGrid from 'react-native-sortable-grid';
 
 export default class SudokuGrid extends Component {
@@ -18,19 +18,9 @@ export default class SudokuGrid extends Component {
   constructor(props) {
     super(props);
     const {grid} = this.props.navigation.state.params;
-    //let grid = [
-    //  [null, 3, null, null, 8, null, 7, null, null],
-    //  [1, null, null, null, 4, 9, null, null, null],
-    //  [null, null, null, null, 1, 5, null, 2, null],
-    //  [2, 5, null, null, null, null, 9, null, null],
-    //  [null, null, 4, 1, null, null, null, null, null],
-    //  [9, null, null, null, null, 6, 8, null, null],
-    //  [7, 8, 9, null, null, null, null, null, null],
-    //  [null, null, 3, null, null, null, null, null, null],
-    //  [null, null, null, null, 3, null, null, 4, 8],
-    //];
     this.state = {
       grid,
+      flatGrid: grid.flat(),
     };
   }
 
@@ -39,17 +29,22 @@ export default class SudokuGrid extends Component {
     const {grid} = this.state;
     const flatGrid = grid.flat();
     return (
-
+<View>
       <SortableGrid 
       blockTransitionDuration      = { 400 }
       activeBlockCenteringDuration = { 200 }
       itemsPerRow                  = { 9 }
       dragActivationTreshold       = { 200 }
-      onDragRelease                = { (itemOrder) => console.log("Drag was released, the blocks are in the following order: ", itemOrder) }
-      onDragStart                  = { ()          => console.log("Some block is being dragged now!") }
+      onDragRelease                = { (itemOrder) => {
+        console.log("Drag was released, the blocks are in the following order: ", itemOrder) 
+        this.setState({
+          flatGrid: itemOrder
+        })}
+      }
+      onDragStart                  = { () => console.log("Some block is being dragged now!") }
       >
       {
-        flatGrid.map( (number, index) =>
+        this.state.flatGrid.map( (number, index) =>
 
       <View key={index} style={[styles.block, { backgroundColor: "grey" }]}>
         <Text style={{color: 'white', fontSize: 30}}>{ number}</Text>
@@ -58,16 +53,37 @@ export default class SudokuGrid extends Component {
       )
       }
 </SortableGrid>
+  <View>
+  <Button
+          title="Solve"
+          onPress={() => this.solveGrid(this.state.flatGrid)}
+        />
+  </View>
+</View>  
     );
   }
 
-  solveGrid = grid => {
+  solveGrid = flatGrid => {
+    let grid = this.convertFlatGridToGrid(flatGrid);
     let startingCoordinates = determineStartingNumbersCoordinates(grid);
+    let solvedGrid = solve(grid, startingCoordinates);
     this.setState({
-      grid: solve(grid, startingCoordinates),
+      flatGrid: solvedGrid.flat(),
     });
   };
+  convertFlatGridToGrid = flatGrid => {
+      let grid = [[]];
+      for (let x = 0; x < 9; x++) {
+        for (let y = 0; y < 9; y++) {
+          flatGrid.forEach(e => {
+              grid[x][y] = e;
+          })
+        }
+      }
+  };
+
 }
+
 
 const styles = StyleSheet.create({
   block: {

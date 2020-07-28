@@ -27,7 +27,7 @@ import {
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import HomeScreen from './app/components/HomeScreen';
-import SudokuGrid from './app/components/sudoku/SudokuGrid';
+import SudokuGrid from './app/components/sudoku/SudokuGrid_v2';
 import CameraTextRecognition from './app/components/CameraTextRecognition';
 
 const MainNavigator = createStackNavigator({

@@ -1,6 +1,6 @@
-import {getSudokuNumber} from '../../services/SudokuNumberGenerator';
-import {isAValidGrid} from '../../services/SudokuValidator';
-import {prettyPrint} from '../../services/SudokuUtils';
+import {getSudokuNumber} from './SudokuNumberGenerator';
+import {isAValidGrid} from './SudokuValidator';
+import {prettyPrint} from './SudokuUtils';
 
 export function solve(grid, startingCoordinates) {
   console.log('About to solve...');

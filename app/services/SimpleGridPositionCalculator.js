@@ -1,3 +1,5 @@
+import {prettyPrint} from '../services/SudokuUtils';
+
 export const calculateGridPositions = readGrid => {
   let gridPositions = [
     [null, null, null, null, null, null, null, null, null],
@@ -42,10 +44,7 @@ export const calculateGridPositions = readGrid => {
     console.log(position);
     console.log(numbers);
 
-    let sanitizedNumbers = numbers.replace(new RegExp('\n', 'g'), ' ');
-    let numberArr = sanitizedNumbers.split(' ');
-
-    let parsedNumbers = sanitizedNumbers.split(' ');
+    let parsedNumbers = numbers.split(' ');
 
     parsedNumbers.forEach((num, i) => {
       let determineGridVerticalPosition =
@@ -54,15 +53,23 @@ export const calculateGridPositions = readGrid => {
       let determineGridHorizontalPosition = Math.floor(
         position.top / horizontalGridMargin,
       );
+      //num.replace(new RegExp('\n', 'g'), '')
+      let isThereANumberBelow = num.includes('\n');
+      let belowNum = num.split('\n')[1];
+      num = isThereANumberBelow ? num[0] : num;
+
+
       determineGridVerticalPosition =
         determineGridVerticalPosition === 9 ? 8 : determineGridVerticalPosition;
       determineGridHorizontalPosition =
         determineGridHorizontalPosition === 9 ? 8 : determineGridHorizontalPosition;
   
       gridPositions[determineGridHorizontalPosition][determineGridVerticalPosition] = num;
+      if (isThereANumberBelow) {
+        gridPositions[determineGridHorizontalPosition === 8 ? 8 : determineGridHorizontalPosition + 1][determineGridVerticalPosition] = belowNum;
+      }
     });
-    
   });
-
+  prettyPrint(gridPositions);
   return gridPositions;
 };
