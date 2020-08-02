@@ -58,18 +58,19 @@ export const calculateGridPositions = readGrid => {
       let belowNum = num.split('\n')[1];
       num = isThereANumberBelow ? num[0] : num;
 
-
       determineGridVerticalPosition =
         determineGridVerticalPosition === 9 ? 8 : determineGridVerticalPosition;
       determineGridHorizontalPosition =
         determineGridHorizontalPosition === 9 ? 8 : determineGridHorizontalPosition;
   
-      gridPositions[determineGridHorizontalPosition][determineGridVerticalPosition] = num;
+      gridPositions[determineGridHorizontalPosition][determineGridVerticalPosition] = Number(num);
       if (isThereANumberBelow) {
-        gridPositions[determineGridHorizontalPosition === 8 ? 8 : determineGridHorizontalPosition + 1][determineGridVerticalPosition] = belowNum;
+        gridPositions[determineGridHorizontalPosition === 8 ? 8 : determineGridHorizontalPosition + 1][determineGridVerticalPosition] = Number(belowNum);
       }
     });
   });
   prettyPrint(gridPositions);
+  console.log("in simple grid position:")
+  console.log(gridPositions)
   return gridPositions;
 };
